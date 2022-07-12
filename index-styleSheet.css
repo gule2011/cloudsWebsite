@@ -1,0 +1,426 @@
+body
+{
+    background-color: #2196F3;
+
+    /* overflow: hidden; */
+}
+
+@font-face {
+    font-family: gameBoy;
+    src: url(earlyGameBoy.ttf);
+}
+/* Heading switches */
+
+.clouds-heading
+{
+    position: fixed;
+    width: 100%;
+    top: 10%;
+    background: none;
+    border: none;
+    text-decoration-line: underline;
+    align-self: auto;
+    text-align: center;
+    font-family: gameBoy,'Common Pixel', sans-serif;
+    font-size: 70px;
+    margin: 3% auto 3% auto;
+    animation-name: cloudsMove2;
+    animation-duration: 2s;
+    z-index: 3;
+    animation-fill-mode: forwards;
+}
+
+.cloudsActive
+{
+    position: fixed;
+    width: 100%;
+    top: 2%;
+    background: none;
+    border: none;
+    text-align: center;
+    font-family: gameBoy,'Common Pixel', sans-serif;
+    color: white;
+    font-size: 30px;
+    margin: 3% auto 3% auto;
+    animation-name: cloudsMove;
+    animation-duration: 2s;
+    z-index: 3;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cloudsMove
+{
+    from {top: 10%; font-size: 70px; color: black; text-decoration-line: underline;}
+    to {top: 2%; font-size: 30px; color: white; text-decoration-line: none;}    
+}
+
+@keyframes cloudsMove2
+{
+    from {top: 2%; font-size: 30px; color: white; text-decoration-line: none;}
+    to {top: 10%; font-size: 70px; color: black; text-decoration-line: underline;}    
+}
+
+.islands-heading
+{
+    position: fixed;
+    width: 100%;
+    top: 2%;
+    background: none;
+    border: none;
+    text-align: center;
+    font-family: gameBoy,'Common Pixel', sans-serif;
+    font-size: 30px;
+    margin: 3% auto 3% auto;
+    animation-name: islandsMove2;
+    animation-duration: 2s;
+    z-index: 3;
+    animation-fill-mode: forwards;
+}
+
+.islandActive
+{
+    position: fixed;
+    width: 100%;
+    top: 10%;
+    background: none;
+    border: none;
+    text-align: center;
+    text-decoration-line: underline;
+    font-family:  gameBoy,'Common Pixel', sans-serif;
+    color: white;
+    font-size: 70px;
+    margin: 3% auto 3% auto;
+    animation-name: islandsMove;
+    animation-duration: 2s;
+    z-index: 3;
+    animation-fill-mode: forwards;
+}
+
+@keyframes islandsMove
+{
+    from {top: 2%; font-size: 30px; color: black; text-decoration-line: none;}
+    to {top: 10%; font-size: 70px; color: white; text-decoration-line: underline;}    
+}
+
+@keyframes islandsMove2
+{
+    from {top: 10%; font-size: 70px; color: white; text-decoration-line: underline;}
+    to {top: 2%; font-size: 30px; color: black; text-decoration-line: none;}
+}
+
+/* Grid and buttons */
+.btn {
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    font-family:  gameBoy,'Common Pixel', sans-serif;
+}
+
+.btn-container:hover {
+  border-bottom:#a99567 1px solid;
+  color:#a99567;
+}
+
+.grid-container 
+{
+    position: fixed;
+    display: grid;
+    width: 99%;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    grid-gap: 5px;
+    background-color: #2196F3;
+    padding: 5px;
+    bottom: 1%;
+}
+
+.grid-container > div:hover
+{
+    transform: scale(1.5);
+}
+
+/* Popup Box */
+
+.popup .overlay {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.7);
+    z-index:1;
+    display:none;
+}
+
+.popup .content {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background-color: rgba(255, 255, 255, 0.8);
+    width:30%;
+    height: 70%;
+    z-index:4;
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+.popup .close-btn{
+    cursor:pointer;
+    position:absolute;
+    right: 20px;
+    top:20px;
+    width:30px;
+    height:30px;
+    background: #222;
+    color: #fff;
+    font-size:25px;
+    font-weight:600;
+    line-weight:30px;
+    text-align:center;
+    border-radius:50%;
+}
+
+.popup.active .overlay{
+    display:block;
+}
+
+.popup.active .content{
+    transition:all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
+}
+
+/*popup content*/
+
+.Popup-pic
+{
+    position: relative ;
+    width: 80%;
+    height: auto;
+    left: 10%;
+    border-style: solid;
+    border-width: medium;
+}
+
+.Popup-content-container
+{
+    position: relative;
+    width:99%;
+    top: 1%;
+    left: 1%;
+    bottom: 1%;
+    background-color: rgba(200, 200, 200, 1);
+    border-style: solid;
+    border-width: medium;
+    font-family:  gameBoy,'Common Pixel', sans-serif;
+}
+
+.Popupheading
+{
+    font-size: 20px;
+}
+
+.Popupcontent-1, .Popupcontent-2, .Popupcontent-3, .Popupcontent-4, .Popupcontent-5
+{
+    font-size: 10px;
+}
+
+/* cloud animation */
+  
+.container 
+{
+    position: fixed;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    margin: 0;
+    z-index: -1;
+}
+.cloud1
+{
+   width: 180px;
+   height: 180px;
+   position: absolute;
+   animation-name: move1;
+   animation-duration: 10s;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+   animation-delay: 1s;
+   animation-fill-mode: backwards;
+   z-index: 2;
+}
+
+.cloud2
+{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    animation-name: move2;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.cloud3
+{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    animation-name: move3;
+    animation-duration: 14s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.cloud4
+{
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    animation-name: move4;
+    animation-duration: 11s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+    z-index: 1;
+}
+
+.cloud5
+{
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    animation-name: move5;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.cloud6
+{
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    animation-name: move6;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 3s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes move1
+{
+    from {left: -600px; top: 0%;}
+    to {left: 100%; top: 0%}    
+}
+
+@keyframes move2
+{
+    from {left: -600px; top: 60%;}
+    to {left: 100%; top: 60%}    
+}
+
+@keyframes move3
+{
+    from {left: -600px; top: 20%;}
+    to {left: 100%; top: 20%}    
+}
+
+@keyframes move4
+{
+    from {left: -1000px; top: 30%;}
+    to {left: 100%; top: 30%}    
+}
+
+@keyframes move5
+{
+    from {left: -1000px; top: 45%;}
+    to {left: 100%; top: 45%}    
+}
+
+@keyframes move6
+{
+    from {left: -1000px; top: 10%;}
+    to {left: 100%; top: 10%}    
+}
+
+/* Island slide */
+.island-container
+{
+    display: block;
+    position: fixed;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 2;
+    animation-name: island-cont2;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+.island-container:hover
+{
+    border-bottom:#a99567 1px solid;
+    color:#a99567;
+}
+
+.island-container2
+{
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 2;
+    animation-name: island-cont;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes island-cont
+{
+    from {left: -100%; top: 0%; background-color: rgba(0, 0, 0, 1);}
+    to {left: 0%; top: 0%; background-color: rgba(0, 0, 0, 1);}    
+}
+
+@keyframes island-cont2
+{
+    from {left: 0%; top: 0%; background-color: rgba(0, 0, 0, 1);} 
+    to {left: -100%; top: 0%; background-color: rgba(0, 0, 0, 1);}    
+}
+
+/* Islands grid container */
+
+.grid-container-islands
+{
+    position: relative;
+    display: grid;
+    width: 80%;
+    left: 10%;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    grid-gap: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 5px;
+    margin-top: -13%;
+    z-index: 4;
+}
+
+.grid-container-islands > div:hover
+{
+    transform: scale(1.5);
+}
+
+/* island background */
+.islandMap
+{
+    position: relative;
+    left: 15%;
+    height: 100%;
+    width:70%;
+    z-index: 3;
+}
+
+
